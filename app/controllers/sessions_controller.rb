@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       # Log the user in and redirect to user's show page
       log_in user
       remember user
-      current_user = user
+      current_user=(user)
       redirect_to root_path
     # render 'new'
     else
