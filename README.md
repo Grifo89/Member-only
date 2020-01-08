@@ -1,7 +1,8 @@
 # Rails projects authentication
+Members-Only is an application wheren only registered members, are allowed to post 
+news. The news posted can only be read by members that have accounts.
 
-# Things you may want to cover:
-
+# What we covered in the app.
 1. Authentication
 2. Routes
 3. Models

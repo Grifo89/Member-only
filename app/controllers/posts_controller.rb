@@ -5,9 +5,10 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(title: params[:post][:title], body: params[:post][:entry], user_id: @current_user.id)
+    @post = Post.new(post_params)
+    @post.build_user(id: @current_user.id)
     if @post.save
-      flash.now[:success] = "Post submitted 😂😂😂"
+      flash.now[:success] = "Post submitted 😂😂😂 "
       redirect_to index_path
     else
       render 'new'
@@ -22,11 +23,15 @@ class PostsController < ApplicationController
   private
   # Before filters
 
-  # Confirms a logged-in user
-  def logged_in_user
-    unless logged_in?
-      flash[:danger] = "Please log in"
-      redirect_to login_url
+    # Confirms a logged-in user
+    def logged_in_user
+      unless logged_in?
+        flash[:danger] = "Please log in"
+        redirect_to login_url
+      end
     end
-  end
+
+    def post_params
+      params.require(:post).permit(:title, :entry)
+    end
 end
