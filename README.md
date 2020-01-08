@@ -2,9 +2,9 @@
 
 # Things you may want to cover:
 
-1. Authentication
-2. Routes
-3. Models
+1. Authentication.
+2. Routes.
+3. Models.
 
 # TECHNICAL DOCUMENTATION
 ## Pre-requisites
