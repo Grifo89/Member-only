@@ -2,7 +2,7 @@ class User < ApplicationRecord
   has_many :posts
   attr_accessor :remember_token
   before_save { self.email = email.downcase }
-
+  before_create { self.remember_token= Digest.SHA1.hexdigest(SecureRandom.urlsafe_base64.to_s) } 
   validates :name, presence: true, length: { maximum: 50}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 255},
