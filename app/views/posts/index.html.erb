@@ -1,0 +1,21 @@
+
+<div class="container">
+  <h1>Members' Posts</h1>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <% @post.each do |p| %>
+          <hr>
+          <h4>
+            <%= p.title %>
+          </h4>
+          <% if logged_in? %>
+          <span><%= author(p) %></span>
+          <% end %>
+          <p><%= p.body %></p>
+          <hr>
+        <% end %>
+      </section>
+    </aside>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<h1> Gossip Members Portal</h1>
+<div class="container">
+  <h3 class="center">What is your gossip from ?</h3>
+  <div class="row">
+    <%= form_with model: @post do |f| %>
+
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control' %>
+
+      <%= f.label :body %>
+      <%= f.text_area :body, size: '50x10', class: 'form-control' %>
+
+      <%= f.submit "Submit you post", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
